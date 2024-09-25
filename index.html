@@ -8,6 +8,7 @@
   <body>
     <section>
       <div>
+        <h1>Over <span id="over">0</span></h1>
         <h1>Ball no <span id="ball-count">0</span></h1>
         <div class="btn">
           <button id="add-ball">Add Delivery</button>
@@ -43,8 +44,11 @@
       document.getElementById("reset").addEventListener("click", function () {
         let ballCount = document.getElementById("ball-count");
         let ball = Number(ballCount.innerText);
-
         ballCount.innerText = 0;
+        let overCount = document.getElementById("over");
+        let over = Number(overCount.innerText);
+        over++;
+        overCount.innerText = over;
       });
     </script>
   </body>
