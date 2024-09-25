@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Over Counter By Shahed</title>
+  </head>
+  <body>
+    <section>
+      <div>
+        <h1>Ball no <span id="ball-count">0</span></h1>
+        <div class="btn">
+          <button id="add-ball">Add Delivery</button>
+          <button id="reduce-ball">Reduce Delivery</button>
+        </div>
+        <div>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+    </section>
+    <script>
+      document
+        .getElementById("add-ball")
+        .addEventListener("click", function () {
+          let ballCount = document.getElementById("ball-count");
+          let ball = Number(ballCount.innerText);
+          if (ball <= 5) {
+            ball++;
+            ballCount.innerText = ball;
+          }
+        });
+      document
+        .getElementById("reduce-ball")
+        .addEventListener("click", function () {
+          let ballCount = document.getElementById("ball-count");
+          let ball = Number(ballCount.innerText);
+          if (ball > 0) {
+            ball--;
+            ballCount.innerText = ball;
+          }
+        });
+
+      document.getElementById("reset").addEventListener("click", function () {
+        let ballCount = document.getElementById("ball-count");
+        let ball = Number(ballCount.innerText);
+
+        ballCount.innerText = 0;
+      });
+    </script>
+  </body>
+</html>
